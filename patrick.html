@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe29f, #ffb347);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    img {
+      width: 260px;
+      animation: float 3s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-10vh); }
+      to { transform: translateY(110vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="patrick.png" alt="Patrick">
+
+  <script>
+    setInterval(() => {
+      const e = document.createElement("div");
+      e.className = "emoji";
+      e.textContent = ["🎉","✨","💖"][Math.floor(Math.random()*5)];
+      e.style.left = Math.random() * 100 + "vw";
+      e.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(e);
+    }, 150);
+  </script>
+
+</body>
+</html>
